@@ -3,14 +3,58 @@ const fs = require("fs")
 
 const generateReadME = ({ title, description, installInstructions, usageInfo, contributionGuidelines, testInstructions, license, github, email }) =>
 `# Title: ${title}
-         * Languages: ${description}
-         * Preferred Communication: ${installInstructions}
-         * Usage Information within the project: ${usageInfo}
-         * Contribution Guidelines for the project: ${contributionGuidelines}
-         * Test Instructions for the project: ${testInstructions}
-         * Licenses for this project: ${license}
-         * GitHub Profile Link: https://github.com/${github}
-         * Email Link: ${email}`;
+![Generic badge](https://img.shields.io/badge/License-${license}-<COLOR>.svg)
+## Description
+${description}
+# Table of Contents
+
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributions](#contributions)
+- [Tests](#test)
+- [Questions](#questions)
+
+<a href = "installation">
+
+## Installation
+</a>
+
+${installInstructions}
+<a href = "usage">
+
+## Usage 
+</a>
+
+${usageInfo}
+<a href = "license">
+
+## License 
+</a>
+${license}
+
+<a href = "contributions">
+
+## Contribution
+</a>
+${contributionGuidelines}
+
+<a href = "test">
+
+## Test
+</a>
+${testInstructions}
+
+<a href = "questions">
+
+## Questions 
+</a>
+
+Go to my GitHub profile: https://github.com/${github}<br>
+Contact me at: ${email}`;
+
+
 inquirer
     .prompt([
         {
@@ -62,7 +106,7 @@ inquirer
     ])
     .then((answers) => {
         const mdPageContent = generateReadME(answers);
-        fs.writeFile("README.md", mdPageContent, (err) =>
+        fs.writeFile("generatedREADME.md", mdPageContent, (err) =>
             err ? console.log(err) : console.log('Successfully created README.md!') 
             );      
     }) ;
