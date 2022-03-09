@@ -1,4 +1,4 @@
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
 const fs = require("fs")
 
 inquirer
@@ -15,28 +15,29 @@ inquirer
         },
         {
             type: 'input',
-            name: 'install-instructions',
+            name: 'installInstructions',
             message: 'What are the install instructions for this project?'
         },
         {
             type: 'input',
-            name: 'usage-info',
+            name: 'usageInfo',
             message: 'what is the usage information for this project?'
         },
         {
             type: 'input',
-            name: 'contribution-guidelines',
+            name: 'contributionGuidelines',
             message: 'What are the contribution guidelines for this project?'
         },
         {
             type: 'input',
-            name: 'test-instructions',
+            name: 'testInstructions',
             message: 'What are the testing instructions for this project?'
         },
         {
             type: 'checkbox',
             name: 'license',
-            message: 'What licenses were used during this project?'
+            message: 'What licenses were used during this project?',
+            choices: ['mit', 'html', 'css']
         },
         {
             type: 'input',
@@ -47,14 +48,15 @@ inquirer
             type: 'input',
             name: 'email',
             message: 'What is the email address to contact with?'
-        },
+        }
     ])
     .then(answer => {
-        console.log(answer);
-        const fileName = `${answer.name.toLowerCase().split(' ').join('')}.json`
-        console.log(fileName)
+        
+        fs.writeFile("README.md", `# Title: ${answer.title}\n\n * Languages: ${answer.description}\n\n * Preferred Communication: ${answer.installInstructions}\n\n`, (err) =>
+            err ? console.log(err) : console.log('Success!') 
+            )
+        
+    }) 
 
-        fs.writeFile(fileName, JSON.stringify(answer, null, 2), (err) => {
-            err ? console.log(err) : console.log("success")
-        })
-    })
+  
+    
