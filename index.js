@@ -1,6 +1,16 @@
 const inquirer = require('inquirer');
 const fs = require("fs")
 
+const generateReadME = ({ title, description, installInstructions, usageInfo, contributionGuidelines, testInstructions, license, github, email }) =>
+`# Title: ${title}
+         * Languages: ${description}
+         * Preferred Communication: ${installInstructions}
+         * Usage Information within the project: ${usageInfo}
+         * Contribution Guidelines for the project: ${contributionGuidelines}
+         * Test Instructions for the project: ${testInstructions}
+         * Licenses for this project: ${license}
+         * GitHub Profile Link: https://github.com/${github}
+         * Email Link: ${email}`;
 inquirer
     .prompt([
         {
@@ -50,13 +60,12 @@ inquirer
             message: 'What is the email address to contact with?'
         }
     ])
-    .then(answer => {
-        
-        fs.writeFile("README.md", `# Title: ${answer.title}\n\n * Languages: ${answer.description}\n\n * Preferred Communication: ${answer.installInstructions}\n\n`, (err) =>
-            err ? console.log(err) : console.log('Success!') 
-            )
-        
-    }) 
+    .then((answers) => {
+        const mdPageContent = generateReadME(answers);
+        fs.writeFile("README.md", mdPageContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created README.md!') 
+            );      
+    }) ;
 
   
     
