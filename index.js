@@ -16,43 +16,43 @@ ${description}
 - [Tests](#test)
 - [Questions](#questions)
 
-<a href = "installation">
+<a href = "installation"></a>
 
 ## Installation
-</a>
 
-${installInstructions}
-<a href = "usage">
+
+*${installInstructions}
+<a href = "usage"></a>
 
 ## Usage 
-</a>
 
-${usageInfo}
-<a href = "license">
+
+*${usageInfo}
+<a href = "license"></a>
 
 ## License 
-</a>
-${license}
 
-<a href = "contributions">
+*${license}
+
+<a href = "contributions"></a>
 
 ## Contribution
-</a>
-${contributionGuidelines}
 
-<a href = "test">
+*${contributionGuidelines}
+
+<a href = "test"></a>
 
 ## Test
-</a>
-${testInstructions}
 
-<a href = "questions">
+*${testInstructions}
+
+<a href = "questions"></a>
 
 ## Questions 
-</a>
 
-Go to my GitHub profile: https://github.com/${github}<br>
-Contact me at: ${email}`;
+
+*Go to my GitHub profile: https://github.com/${github}<br>
+*Contact me at: ${email}`;
 
 
 inquirer
@@ -88,10 +88,10 @@ inquirer
             message: 'What are the testing instructions for this project?'
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'license',
             message: 'What licenses were used during this project?',
-            choices: ['mit', 'html', 'css']
+            choices: ['MIT', 'Apache', 'Unlicense']
         },
         {
             type: 'input',

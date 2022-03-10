@@ -1,5 +1,5 @@
-# Title: README
-![Generic badge](https://img.shields.io/badge/License-mit-<COLOR>.svg)
+# Title: bpeal
+![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg)
 ## Description
 desc
 # Table of Contents
@@ -12,40 +12,40 @@ desc
 - [Tests](#test)
 - [Questions](#questions)
 
-<a href = "installation">
+<a href = "installation"></a>
 
-## Installation 
-</a>
+## Installation
 
 
-<a href = "usage">
+inst
+<a href = "usage"></a>
 
 ## Usage 
-</a>
 
 
-<a href = "license">
+usage
+<a href = "license"></a>
 
 ## License 
-</a>
 
+MIT
 
-<a href = "contributions">
+<a href = "contributions"></a>
 
-## Contribution 
-</a>
+## Contribution
 
+contr
 
-<a href = "test">
+<a href = "test"></a>
 
-## Test 
-</a>
+## Test
+
 test
 
-<a href = "questions">
+<a href = "questions"></a>
 
 ## Questions 
-</a>
 
-Go to my GitHub profile: https://github.com/BPpearsall<br>
-Contact me at: Email
+
+Go to my GitHub profile: https://github.com/BP<br>
+Contact me at: email
