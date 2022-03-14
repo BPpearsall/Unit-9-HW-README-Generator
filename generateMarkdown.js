@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// If else statements to create badges if there are licenses and to remove the areas on the readme if there are no licenses 
 function renderLicenseBadge(license) {
   if (license !== undefined) {
     return `[![License: ${license}](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})`
@@ -31,7 +32,7 @@ function renderLicenseSection(license) {
   }
   console.log(license)
 }
-// TODO: Create a function to generate markdown for README
+// generatedREADME files skeleton and creation
 function generateMarkdown({title, description, installInstructions, usageInfo, contributionGuidelines, testInstructions, license, github, email}) {
   license = license[0]
   console.log(license)
@@ -93,5 +94,5 @@ ${renderLicenseSection(license)}
 
 * Contact me at: ${email}`;
 }
-
+// exporting the above function to index.js
 module.exports = generateMarkdown;
