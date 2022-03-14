@@ -10,3 +10,5 @@ When I complete the questions in the terminal, it populates the correct area in 
 
 When I complete the inquirer, it runs a linked JS file called generateMarkdown.js which houses the skeleton .md file and adds the linked answers to the approriate area.
 
+Here is a link to the youtube video that goes over the homework https://www.youtube.com/watch?v=-TE1j67Rxls
+
