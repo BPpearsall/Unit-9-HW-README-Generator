@@ -1,13 +1,17 @@
-# Title: bpeal
-![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg)
+# README Generator
+  
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
-desc
+
+Short desc of the project
+
 # Table of Contents
 
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+- https://opensource.org/licenses/MIT
 - [Contributions](#contributions)
 - [Tests](#test)
 - [Questions](#questions)
@@ -17,35 +21,39 @@ desc
 ## Installation
 
 
-inst
+* Installation instructions for project
 <a href = "usage"></a>
 
 ## Usage 
 
 
-usage
+* Usage information
+
 <a href = "license"></a>
 
 ## License 
 
-MIT
+    * This project is licensed under the MIT license.
 
-<a href = "contributions"></a>
+<a href = "contribution"></a>
 
 ## Contribution
 
-contr
+* Contribution Guidelines
 
 <a href = "test"></a>
 
 ## Test
 
-test
+* Testing Instructions
 
 <a href = "questions"></a>
 
 ## Questions 
 
 
-Go to my GitHub profile: https://github.com/BP<br>
-Contact me at: email
+* Go to my GitHub profile: https://github.com/BPpearsall@gmail.com
+
+<br>
+
+* Contact me at: BPpearsall@gmail.com

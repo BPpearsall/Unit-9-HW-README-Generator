@@ -1,61 +1,16 @@
 const inquirer = require('inquirer');
 const fs = require("fs")
-
-const generateReadME = ({ title, description, installInstructions, usageInfo, contributionGuidelines, testInstructions, license, github, email }) =>
-`# Title: ${title}
-![Generic badge](https://img.shields.io/badge/License-${license}-<COLOR>.svg)
-## Description
-${description}
-# Table of Contents
+const generateMarkdown = require('./generateMarkdown')
 
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributions](#contributions)
-- [Tests](#test)
-- [Questions](#questions)
+function writeToFile(data) {
+    fs.writeFile("generatedREADME.md", data, (err) =>
+    err ? console.log(err) : console.log('Successfully created README.md!') 
+    );
+}
 
-<a href = "installation"></a>
-
-## Installation
-
-
-*${installInstructions}
-<a href = "usage"></a>
-
-## Usage 
-
-
-*${usageInfo}
-<a href = "license"></a>
-
-## License 
-
-*${license}
-
-<a href = "contributions"></a>
-
-## Contribution
-
-*${contributionGuidelines}
-
-<a href = "test"></a>
-
-## Test
-
-*${testInstructions}
-
-<a href = "questions"></a>
-
-## Questions 
-
-
-*Go to my GitHub profile: https://github.com/${github}<br>
-*Contact me at: ${email}`;
-
-
-inquirer
+function init() {
+    inquirer
     .prompt([
         {
             type: 'input',
@@ -88,10 +43,10 @@ inquirer
             message: 'What are the testing instructions for this project?'
         },
         {
-            type: 'list',
+            type: 'checkbox',
             name: 'license',
             message: 'What licenses were used during this project?',
-            choices: ['MIT', 'Apache', 'Unlicense']
+            choices: ['MIT', 'ISC', 'None']
         },
         {
             type: 'input',
@@ -104,12 +59,12 @@ inquirer
             message: 'What is the email address to contact with?'
         }
     ])
-    .then((answers) => {
-        const mdPageContent = generateReadME(answers);
-        fs.writeFile("generatedREADME.md", mdPageContent, (err) =>
-            err ? console.log(err) : console.log('Successfully created README.md!') 
-            );      
+    .then((data) => {
+        const mdPageContent = generateMarkdown(data);
+        writeToFile(mdPageContent)
+              
     }) ;
-
+}
+ init()
   
     
